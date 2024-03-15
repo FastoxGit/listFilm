@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Liste des films",
+        "path": "/list"
+    },
+    {
+        "title": "Rechercher un film",
+        "path": "/search"
+    },
+    {
+        "title": "Ajouter un film",
+        "path": "/add"
+    }
+]
