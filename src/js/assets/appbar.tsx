@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import menus from "../menus.json"
+import menus from "../menus.tsx"
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -121,14 +121,16 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {menus.map((menu, i) => (
-              <Button
-                key={i}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-                component="a"
-                href={menu.path}
-              >
-                {menu.title}
-              </Button>
+              menu.title.length != 0 && (
+                <Button
+                  key={i}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  component="a"
+                  href={menu.path}
+                >
+                  {menu.title}
+                </Button>
+              )
             ))}
           </Box>
 

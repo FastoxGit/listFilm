@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import "bootstrap/dist/js/bootstrap.bundle.min.js.map";
 import './css/index.css';
 import Header from './js/pages/header.tsx';
-import Home from './js/pages/home.tsx'
-import FilmList from './js/pages/filmList.tsx'
-import FilmSearch from './js/pages/filmSearch.tsx'
-import FilmAdd from './js/pages/filmAdd.tsx'
+import Footer from './js/assets/footer.tsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
+
+import menus from './js/menus.tsx'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,12 +17,12 @@ root.render(
       <Header />
       <Router>
         <Routes>
-          <Route path='/' element={<Home />} ></Route>
-          <Route path='/list' element={<FilmList />} ></Route>
-          <Route path='/search' element={<FilmSearch />} ></Route>
-          <Route path='/add' element={<FilmAdd />} ></Route>
+          {menus.map((menu, i) => (
+            <Route key={i} path={menu.path} element={menu.component}></Route>
+          ))}
         </Routes>
       </Router>
+      <Footer />
     </React.StrictMode>
   </div>
 );

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-function FilmList() {
+function FilmSearch() {
 
     const [homePage, setHomePage] = useState("Bienvenue sur la recherche de film !");
 
@@ -12,4 +12,4 @@ function FilmList() {
     )
 }
 
-export default FilmList;
+export default FilmSearch;
