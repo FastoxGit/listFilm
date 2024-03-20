@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 // AXIOS
 import Axios from "axios";
-
+// TOKEN
+import token from "../token";
 // MUI
 import { Paper } from '@mui/material';
 
@@ -14,7 +15,7 @@ function Home() {
 
     const config = {
         headers: { 
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNjA4MjhlN2VlYmQ2Yjg5OWY2OTM0ZTA5MDk2NDgwYyIsInN1YiI6IjY1ZjQ1Y2M2NTk1YTU2MDE2MzA1ZDFlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7Jpb3It9OXnXgFAxbbbnF90a6sadSzoW_BC71Zw8Nzs` 
+            Authorization: token 
         }
     };
 
