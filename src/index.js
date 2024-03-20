@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js.map";
 import './css/index.css';
 import Header from './js/pages/header.tsx';
-import Footer from './js/assets/footer.tsx';
+import Footer from './js/assets/footer/footer.tsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 
@@ -12,7 +12,7 @@ import menus from './js/menus.tsx'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <div className="App">
+  <div className="App container">
     <React.StrictMode>
       <Header />
       <Router>
@@ -22,7 +22,7 @@ root.render(
           ))}
         </Routes>
       </Router>
-      <Footer />
+      {/* <Footer /> */}
     </React.StrictMode>
   </div>
 );
