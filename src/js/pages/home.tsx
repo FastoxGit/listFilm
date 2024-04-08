@@ -3,13 +3,15 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 // AXIOS
 import Axios from "axios";
+// MOMENT
+import moment from 'moment';
+
 // TOKEN
 import token from "../token";
 // MUI
-import { Paper } from '@mui/material';
 
 function Home() {
-
+    moment.locale("fr");
     const [data, setData] = useState({});
     const navigate = useNavigate();
 
@@ -29,11 +31,11 @@ function Home() {
         }
     }
 
-    const handleOpenMovieUnique = (id) => {
-        console.log("je clique sur " + id);
+    const handleOpenMovieUnique = (id, overview) => {
         navigate('/movie/unique', {
             state: {
-                id: id
+                id: id,
+                overview: overview
             }
         });
     }
@@ -48,20 +50,24 @@ function Home() {
         <div className='row mx-0 justify-content-center'>
                 {Object.keys(data).length > 0 && (
                     data.results.map((movie, i) => 
-                        <Paper key={i} className='col-3 bg-white m-2 justify-content-center text-center' style={{ height: "15rem", width: "15rem" }}>
+                        <div key={i} className='col-2 m-2 justify-content-center' style={{ border: "1px solid black", borderRadius: "10px" }}>
                             {movie.poster_path !== null ? (
                                 <img 
-                                    className='mt-3' 
-                                    style={{ height: "70%", cursor: "pointer" }} 
+                                    className='mt-3 d-block m-auto rounded' 
+                                    style={{ height: "60%", cursor: "pointer" }} 
                                     src={'https://media.themoviedb.org/t/p/w220_and_h330_face' + movie.poster_path} 
                                     alt={movie.title} 
-                                    onClick={() => handleOpenMovieUnique(movie.id)}
+                                    onClick={() => handleOpenMovieUnique(movie.id, movie.overview)}
                                 />
                             ) : (
                                 <p>Nous n'avons pas d'image pour ce film</p>
                             )}
-                            <p className='text-dark mt-2'>{movie.title}</p>
-                        </Paper>
+                            <div style={{ fontSize: "14px" }} className='mt-2'>
+                                <p className='m-0 text-dark fw-bold'>{movie.title}</p>
+                                <span>Note moyenne : {movie.vote_average.toFixed(2)} / 10</span><br/>
+                                <span>Date de sortie : {moment(movie.release_date).format('DD/MM/YYYY')}</span>
+                            </div>
+                        </div>
                     )
                 )}
         </div>

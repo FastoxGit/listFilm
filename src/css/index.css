@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: white;
 }
 
 code {
@@ -24,4 +25,8 @@ code {
   bottom: 0;
   width: 100%;
   min-height: 4vh;
+}
+
+.opacityBackground {
+  background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 50%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
 }
