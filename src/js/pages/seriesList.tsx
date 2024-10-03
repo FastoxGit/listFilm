@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-function FilmList() {
+function SeriesList() {
 
-    const [homePage, setHomePage] = useState("Bienvenue sur la liste des films !");
+    const [homePage, setHomePage] = useState("Bienvenue sur la liste des séries !");
 
     return (
         <div>
@@ -12,4 +12,4 @@ function FilmList() {
     )
 }
 
-export default FilmList;
+export default SeriesList;

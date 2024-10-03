@@ -22,7 +22,7 @@ root.render(
           ))}
         </Routes>
       </Router>
-      {/* <Footer /> */}
+      <Footer />
     </React.StrictMode>
   </div>
 );

@@ -7,7 +7,7 @@ function FilmAdd() {
 
     return (
         <div>
-            <p className='text-white mt-2'>{homePage}</p>
+            <p className='text-dark mt-2'>{homePage}</p>
         </div>
     )
 }

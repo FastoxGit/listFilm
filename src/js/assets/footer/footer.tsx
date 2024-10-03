@@ -31,7 +31,7 @@ function Footer() {
   };
 
   return (
-    <footer className="footer d-flex justify-content-around align-items-center">
+    <div className="footer d-flex justify-content-around align-items-center">
       <span style={{cursor: "pointer"}} onClick={handleClickOpen}>Conditions d'utilisation</span>
       {open && (
         <TermsUse
@@ -39,15 +39,15 @@ function Footer() {
           handleClose={handleClose}
         />
       )}
-      <span style={{cursor: "pointer"}} onClick={handleClickOpenUserContact} className="text-white">Nous contacter</span>
+      <span style={{cursor: "pointer"}} onClick={handleClickOpenUserContact} className="text-dark">Nous contacter</span>
       {openUserContact && (
         <UserContact
           open={openUserContact}
           handleClose={handleCloseUserContact}
         />
       )}
-      <span className="text-white">HELLO 3</span>
-    </footer>
+      <span className="text-dark">HELLO 3</span>
+    </div>
   )
 }
 

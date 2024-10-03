@@ -2,7 +2,7 @@ import * as React from "react";
 import Home from "./pages/home.tsx";
 import FilmList from "./pages/filmList.tsx";
 import FilmAdd from "./pages/filmAdd.tsx";
-import FilmSearch from "./pages/filmSearch.tsx";
+import SeriesList from "./pages/seriesList.tsx";
 import UniqueMovie from "./pages/uniqueMovie.tsx";
 
 const Menus = [
@@ -12,14 +12,14 @@ const Menus = [
         component: <Home />
     },
     {
-        title: "Liste des films",
-        path: "/list",
+        title: "Films",
+        path: "/films",
         component: <FilmList />,
     },
     {
-        title: "Rechercher un film",
-        path: "/search",
-        component: <FilmSearch />,
+        title: "Séries",
+        path: "/series",
+        component: <SeriesList />,
     },
     {
         title: "Ajouter un film",

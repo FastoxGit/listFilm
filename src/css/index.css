@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #282c34; */
   background-color: white;
+  /* background-image: url('./images/background.jpg'); */
 }
 
 code {
@@ -17,16 +18,51 @@ code {
 .App {
   /* text-align: center; */
   /* min-height: 100vh; */
+  background-color: #eeeeee;
+  padding: 0;
+}
+
+#root {
+  background: url("./images/background.jpg");
 }
 
 .footer {
-  background-color: red;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  background-color: #cdcdcd;
   min-height: 4vh;
 }
 
 .opacityBackground {
   background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 50%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
+}
+
+.banner {
+  height: 25rem;
+  background-image: url('./images/banner.jpg');
+  background-size: cover;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  overflow-x: scroll;
+  padding-top: 0;
+  padding-bottom: 20px;
+  flex: 0 0 600px;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #898989;
+  border-radius: 10px;
+}
+
+li {
+  flex: 0 0 150px;
+  background: var(--accent);
+  margin: 0 20px 0 0;
 }
